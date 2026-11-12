@@ -13,7 +13,11 @@ export default function RootLayout() {
       <ThemeProvider value={theme}>
          <SafeAreaProvider>
             <Stack screenOptions={{ headerShown: false }}>
-               <Stack.Screen name="index" options={{ title: "Home" }} />
+               <Stack.Screen name="index" />
+               <Stack.Screen
+                  name="todo"
+                  options={{ presentation: "transparentModal", animation: "slide_from_right" }}
+               />
             </Stack>
             <StatusBar style={theme.colors.statusBarStyle} animated />
          </SafeAreaProvider>
