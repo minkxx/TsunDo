@@ -1,3 +1,4 @@
+import AddNoteButton from "@/components/AddNoteButton";
 import NoteCard from "@/components/NoteCard";
 import { dummy_data } from "@/data";
 import { useAppTheme } from "@/hooks/useAppTheme";
@@ -20,7 +21,7 @@ export default function Index() {
       >
          <Text
             style={{
-               color: colors.textPrimary,
+               color: colors.primary,
                fontSize: 27,
                fontWeight: 600,
                marginTop: 3,
@@ -51,7 +52,7 @@ export default function Index() {
                                  backgroundColor: colors.divider,
                                  borderRadius: 3,
                                  alignSelf: "center",
-                                 marginVertical: 12,
+                                 marginVertical: 15,
                               }}
                            />
                         )}
@@ -60,6 +61,7 @@ export default function Index() {
                })}
             </ScrollView>
          )}
+         <AddNoteButton />
       </View>
    );
 }
