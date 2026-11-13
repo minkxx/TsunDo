@@ -42,3 +42,6 @@ yarn-error.*
 
 # build/debug apks
 *.apk
+
+# drizzle migrations
+/drizzle
