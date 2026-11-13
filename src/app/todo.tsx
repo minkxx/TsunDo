@@ -8,6 +8,34 @@ export default function Todo() {
    const { colors } = useAppTheme();
    const insets = useSafeAreaInsets();
    const { id } = useLocalSearchParams();
+
+   if (id === "new_note") {
+      return (
+         <View
+            style={{
+               flex: 1,
+               paddingHorizontal: 18,
+               backgroundColor: colors.background,
+               paddingTop: insets.top + 10,
+               paddingBottom: insets.bottom,
+            }}
+         >
+            <Text
+               style={{
+                  color: colors.primary,
+                  fontSize: 21,
+                  fontWeight: 500,
+                  marginVertical: 3,
+                  textAlign: "center",
+               }}
+            >
+               New Note
+            </Text>
+            <ScrollView contentContainerStyle={{ marginTop: 15 }}></ScrollView>
+         </View>
+      );
+   }
+
    const data = dummy_data.find((note) => note.id === Number(id));
 
    return (
