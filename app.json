@@ -41,7 +41,8 @@
                "enforceContrast": false,
                "style": "auto"
             }
-         ]
+         ],
+         "expo-sqlite"
       ],
       "experiments": {
          "typedRoutes": true,
