@@ -1,5 +1,7 @@
 import AddNoteButton from "@/components/AddNoteButton";
 import NoteCard from "@/components/NoteCard";
+import OptionsButton from "@/components/OptionsButton";
+import SearchButton from "@/components/SearchButton";
 import { dummy_data } from "@/data";
 import { useAppTheme } from "@/hooks/useAppTheme";
 import { ScrollView, Text, View } from "react-native";
@@ -13,24 +15,35 @@ export default function Index() {
       <View
          style={{
             flex: 1,
-            paddingHorizontal: 18,
+            paddingHorizontal: 15,
             backgroundColor: colors.background,
             paddingTop: insets.top + 10,
-            paddingBottom: insets.bottom + 12,
+            paddingBottom: 9,
          }}
       >
+         <View
+            style={{
+               flexDirection: "row",
+               justifyContent: "flex-end",
+               alignItems: "center",
+               gap: 15,
+               height: 40,
+            }}
+         >
+            <SearchButton />
+            <OptionsButton />
+         </View>
          <Text
             style={{
                color: colors.primary,
                fontSize: 27,
                fontWeight: 600,
-               marginTop: 3,
                marginBottom: 15,
             }}
          >
-            TsunDo
+            Notes
          </Text>
-         {dummy_data && (
+         {dummy_data.length > 0 ? (
             <ScrollView
                contentContainerStyle={{ paddingBottom: 24 }}
                style={{
@@ -40,11 +53,11 @@ export default function Index() {
                }}
                showsVerticalScrollIndicator={false}
             >
-               {dummy_data.map((note) => {
+               {dummy_data.map((note, index) => {
                   return (
                      <View key={note.id}>
                         <NoteCard id={note.id} title={note.title} description={note.description} />
-                        {dummy_data.length !== note.id && (
+                        {dummy_data.indexOf(note) !== dummy_data.length - 1 && (
                            <View
                               style={{
                                  height: 0.5,
@@ -60,6 +73,18 @@ export default function Index() {
                   );
                })}
             </ScrollView>
+         ) : (
+            <View
+               style={{
+                  flex: 1,
+                  justifyContent: "center",
+                  alignItems: "center",
+               }}
+            >
+               <Text style={{ color: colors.textPrimary, fontWeight: "bold", fontSize: 21 }}>
+                  No notes yet!!
+               </Text>
+            </View>
          )}
          <AddNoteButton />
       </View>
