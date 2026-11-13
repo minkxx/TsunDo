@@ -11,7 +11,7 @@ export const LightTheme = {
 
       cardBackground: "#FFFFFF",
       cardBorder: "#E0E0E0",
-      cardElevation: 1,
+      cardElevation: 8,
 
       surface: "#FFFFFF",
       surfaceVariant: "#F5F5F5",
@@ -73,7 +73,7 @@ export const DarkTheme = {
 
       cardBackground: "#1E1E1E",
       cardBorder: "#333333",
-      cardElevation: 3,
+      cardElevation: 8,
 
       surface: "#1C1B1F",
       surfaceVariant: "#2D2A2E",
