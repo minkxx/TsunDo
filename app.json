@@ -8,7 +8,8 @@
       "icon": "./assets/images/icon.png",
       "userInterfaceStyle": "automatic",
       "ios": {
-         "icon": "./assets/expo.icon"
+         "icon": "./assets/expo.icon",
+         "bundleIdentifier": "com.minkxx.tsundo"
       },
       "android": {
          "adaptiveIcon": {
@@ -32,6 +33,13 @@
                "backgroundColor": "#208AEF",
                "image": "./assets/images/splash-icon.png",
                "imageWidth": 76
+            }
+         ],
+         [
+            "expo-navigation-bar",
+            {
+               "enforceContrast": false,
+               "style": "auto"
             }
          ]
       ],
