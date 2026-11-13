@@ -14,7 +14,7 @@ export default function NoteCard({ id, title, description }: NoteCardProps) {
    return (
       <TouchableOpacity
          onPress={() => {
-            router.push(`/todo?id=${id}`);
+            router.push(`/note?id=${id}`);
          }}
       >
          <Text

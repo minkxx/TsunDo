@@ -8,15 +8,13 @@ export default function AddNoteButton() {
    return (
       <TouchableOpacity
          onPress={() => {
-            router.push("/todo?id=new_note");
+            router.push("/note?id=new_note");
          }}
          style={{
-            width: 60,
-            height: 60,
-            borderRadius: 12,
+            borderRadius: 40,
             backgroundColor: colors.primary,
             elevation: colors.cardElevation,
-            shadowColor: "#000",
+            shadowColor: colors.primary,
             shadowOffset: {
                width: 0,
                height: 4,
@@ -32,7 +30,7 @@ export default function AddNoteButton() {
          <SymbolView
             name={{ android: "add", ios: "plus.circle" }}
             tintColor={colors.onPrimary}
-            size={60}
+            size={57}
             style={{ justifyContent: "center", alignItems: "center" }}
          />
       </TouchableOpacity>
